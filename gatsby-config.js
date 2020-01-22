@@ -1,12 +1,24 @@
-const dotenv = require('dotenv');
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
 
-if (process.env.NODE_ENV !== 'production') {
-  dotenv.config()
+const contentfulConfig = {
+  spaceId: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  host: process.env.CONTENTFUL_HOST
+}
+
+const { spaceId, accessToken } = contentfulConfig
+
+if (!spaceId || !accessToken) {
+  throw new Error(
+    'Contentful spaceId and the access token need to be provided.'
+  )
 }
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Garb`,
+    title: `Andrew Dinh - Developer`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `Andrew Dinh`,
     createdAt: 2019,
