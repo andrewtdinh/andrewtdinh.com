@@ -19,10 +19,11 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: `Andrew Dinh - Developer`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `A developer with extensive automation and software quality engineer experience`,
     author: `Andrew Dinh`,
-    createdAt: 2019,
+    createdAt: 2020,
   },
+  pathPrefix: '/gatsby-contentful-starter',
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -68,10 +69,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-      }
+      options: contentfulConfig
     },
     {
       resolve: `gatsby-plugin-snipcart`,
