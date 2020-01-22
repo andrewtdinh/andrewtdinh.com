@@ -1,3 +1,3 @@
-# Gatsby Garb
+# andrewtdinh.com
 
-#### A sample Gatsby blog/shop with a cart
+#### A remake of my personal webpage with Gatsby, React, GraphQL, Contentful, and other plugins.
